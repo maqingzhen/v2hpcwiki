@@ -1,0 +1,1021 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Spack HPC系统应用软件管理工具 - V2HPC Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spack" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="V2HPC Wiki" class="md-header__button md-logo" aria-label="V2HPC Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            V2HPC Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spack HPC系统应用软件管理工具
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../manual/ft2000%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C-%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8A%A0%E8%BD%BD%E9%83%A8%E5%88%86/" class="md-tabs__link">
+        用户手册
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        应用部署
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools/vimdiff-remote/" class="md-tabs__link">
+        软件使用
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../share/websites/" class="md-tabs__link">
+      网站分享
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      关于
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="V2HPC Wiki" class="md-nav__button md-logo" aria-label="V2HPC Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    V2HPC Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        用户手册
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="用户手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          用户手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/ft2000%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C-%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8A%A0%E8%BD%BD%E9%83%A8%E5%88%86/" class="md-nav__link">
+        ft2000系统用户手册
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        应用部署
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="应用部署" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          应用部署
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Spack HPC应用环境部署
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Spack HPC应用环境部署
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spack" class="md-nav__link">
+    Spack 简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spack_1" class="md-nav__link">
+    Spack 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spack_2" class="md-nav__link">
+    Spack 环境配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spack_3" class="md-nav__link">
+    查看 Spack 已安装软件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    已安装软件的加载
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    应用软件的安装
+  </a>
+  
+    <nav class="md-nav" aria-label="应用软件的安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    准备工作—：软件搜索
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    准备工作二：查看软件详细信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec" class="md-nav__link">
+    准备工作三：查看软件 spec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    最终的工作：软件安装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    软件安装环境配置和选项设置
+  </a>
+  
+    <nav class="md-nav" aria-label="软件安装环境配置和选项设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    查找和添加编译器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    配置方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    问题排查及处理（待完成）
+  </a>
+  
+    <nav class="md-nav" aria-label="问题排查及处理（待完成）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    报错信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spack-build-outtxt" class="md-nav__link">
+    查看日志 spack-build-out.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    安装调试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft2000%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AECESM%E7%94%A8%E6%88%B7%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        ft2000系统配置CESM用户环境
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        软件使用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="软件使用" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          软件使用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vimdiff-remote/" class="md-nav__link">
+        vimdiff比较编辑远程文件
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../share/websites/" class="md-nav__link">
+        网站分享
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Spack HPC应用环境部署</h1>
+                
+                <p>本文记录整理Spack(HPC系统应用软件管理工具)的使用说明。</p>
+<h3 id="spack">Spack 简介</h3>
+<p><strong>Spack</strong> 是一款强大的软件包管理工具</p>
+<ul>
+<li>降低了应用软件的安装难度（源码编译，二进制包安装）</li>
+<li>解决软件之间的依赖关系（确保构建的一致性）</li>
+<li>软件层的构建系统（软件+选项/功能，区别于CMake，Make）</li>
+</ul>
+<h3 id="spack_1">Spack 安装</h3>
+<pre><code class="language-shell">## 安装 spack 代码包
+&gt; git clone https://github.com/spack/spack.git
+
+## 初始化 spack 环境
+&gt; source spack/share/spack/setup-env.sh
+</code></pre>
+<h3 id="spack_2">Spack 环境配置</h3>
+<p>把如下内容添加到 <code>~/.bashrc</code> 或者 <code>~/.bash_profile</code>文件中。</p>
+<pre><code class="language-shell"># .bashrc
+ulimit -l unlimited
+ulimit -s unlimited
+
+# Module package management
+source /THL8/software/modules/3.2.10/Modules/3.2.10/init/bash
+module purge
+
+# Spack package management
+export SPACK_ROOT=/THL8/software/opt/spack
+export PATH=$SPACK_ROOT/bin:$PATH
+source ${SPACK_ROOT}/share/spack/setup-env.sh
+
+</code></pre>
+<h3 id="spack_3">查看 Spack 已安装软件</h3>
+<pre><code class="language-shell">&gt; spack find -l [software name]
+
+选项说明：
+  -p, --paths       显示软件安装路径
+  -d, --deps        显示软件完整的依赖关系图（有向无环图)
+  -l, --long        显示软件spec的hash值和版本号
+  -f, --show-flags  显示软件安装时的编译器选项
+  -x, --explicit    显示直接安装的软件
+  -X, --implicit    显示作为依赖安装的软件
+  -v, --variants    显示软件的安装选项
+  software name     指定软件名称，查看该软件详细信息（hash值，版本，依赖，安装选项，编译选项）
+</code></pre>
+<h3 id="_1">已安装软件的加载</h3>
+<p>把如下内容添加到 <code>~/.bashrc</code> 或者 <code>~/.bash_profile</code>文件中，即可完成对intel编译器19.0.5版本，miniconda2的 4.7.12.1版本，fftw的3.3.8版本和netcdf-fortran的4.5.2版本的安装。</p>
+<pre><code class="language-shell"># Spack package load
+source &lt;(spack module tcl loads --dependencies /w5ky76k) #  intel@19.0.5
+source &lt;(spack module tcl loads --dependencies /s6pzrxk) #  miniconda2@4.7.12.1
+source &lt;(spack module tcl loads --dependencies /pomc2sx) #  fftw@3.3.8
+source &lt;(spack module tcl loads --dependencies /xpyelbb) #  netcdf-fortran@4.5.2
+</code></pre>
+<p>其中 --dependencies 是指同时加载该软件的依赖，/xpyelbb 是netcdf-fortran@4.5.2的安装版本的hash值。配置完 <code>~/.bashrc</code> 或者 <code>~/.bash_profile</code>文件后，通过source 更新环境，即可完成相关软件的加载，可以通过<code>module list</code>查看</p>
+<pre><code class="language-shell">(base) demo@ubuntu:~/github/spack$ module list
+Currently Loaded Modulefiles:
+  1) intel-19.0.5-gcc-8.3.0-w5ky76k              9) rdma-core-20-gcc-8.3.0-4hecl3d
+  2) miniconda2-4.7.12.1-intel-19.0.5-s6pzrxk   10) slurm-16.05.7-intel-19.0.5-rmgee6m
+  3) libpciaccess-0.13.5-intel-19.0.5-p4yolyz   11) mvapich2-2.3.4-intel-19.0.5-23edecg
+  4) libiconv-1.16-gcc-8.3.0-hgw6qbv            12) fftw-3.3.8-intel-19.0.5-pomc2sx
+  5) xz-5.2.5-intel-19.0.5-t7exvpq              13) mvapich2-2.3.4-intel-19.0.5-tgxj347
+  6) zlib-1.2.11-intel-19.0.5-onq52rg           14) hdf5-1.10.6-intel-19.0.5-3y4zybv
+  7) libxml2-2.9.10-intel-19.0.5-ososnes        15) netcdf-c-4.7.3-intel-19.0.5-mz4yici
+  8) libnl-3.3.0-gcc-8.3.0-esj5mge              16) netcdf-fortran-4.5.2-intel-19.0.5-xpyelbb
+</code></pre>
+<h3 id="_2">应用软件的安装</h3>
+<h4 id="_3">准备工作—：软件搜索</h4>
+<p>要使用 spack 安装一款科学计算软件，首选要确定 spack 软件库中是否已经包含这款软件，确认的办法就是使用 <code>spack list</code> 加软件名搜索，比如我们要安装 <code>netcdf</code>，使用 <code>spack list netcdf</code> 搜索得到如下结果：</p>
+<pre><code class="language-shell">(base) demo@ubuntu:~/github/spack$ spack list netcdf
+==&gt; 6 packages.
+netcdf-c  netcdf-cxx  netcdf-cxx4  netcdf-fortran  parallel-netcdf  py-netcdf4
+</code></pre>
+<p>如果spack 还不支持该软件，也就是软件库中还没有，比如wrf，搜索结果会如下所示：</p>
+<pre><code class="language-shell">(base) demo@ubuntu:~/github/spack$ spack info wrf
+==&gt; Error: Package wrf not found.
+</code></pre>
+<p>不过有时搜索不到不是因为spack 库中没有，而是spack中修改了软件的名字。这时可以通过搜索软件描述来查找软件，比如我们查找 geophysical 相关 的软件：</p>
+<pre><code class="language-shell">(base) demo@ubuntu:~/github/spack$ spack list geophysical
+==&gt; 0 packages.
+
+(base) demo@ubuntu:~/github/spack$ spack list --search-description geophysical
+==&gt; 1 packages.
+spherepack
+</code></pre>
+<p>直接用 spack list 查找是没有，但是加上  --search-description  选项就可以找到一个叫做spherepack的软件包。</p>
+<h4 id="_4">准备工作二：查看软件详细信息</h4>
+<p>有时即便软件库中包含了你想安装的软件，也不必着急安装，明智的做法是先使用 <code>spack info package</code> 命令查看spack中对软件的描述，还是以 netcdf-c 为例：</p>
+<pre><code class="language-shell">(base) demo@ubuntu:~/github/spack$ spack info netcdf-c
+AutotoolsPackage:   netcdf-c
+
+Description:
+    NetCDF (network Common Data Form) is a set of software libraries and
+    machine-independent data formats that support the creation, access, and
+    sharing of array-oriented scientific data. This is the C distribution.
+
+Homepage: http://www.unidata.ucar.edu/software/netcdf
+
+Maintainers: @skosukhin @WardF
+
+Tags:
+    None
+
+Preferred version:
+    4.7.3      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.3.tar.gz
+
+Safe versions:
+    master     [git] https://github.com/Unidata/netcdf-c.git on branch master
+    4.7.3      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.3.tar.gz
+    4.7.2      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.2.tar.gz
+    4.7.1      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.1.tar.gz
+    4.7.0      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.0.tar.gz
+    4.6.3      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.6.3.tar.gz
+    4.6.2      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.6.2.tar.gz
+    4.6.1      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.6.1.tar.gz
+    4.6.0      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.6.0.tar.gz
+    4.5.0      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.5.0.tar.gz
+    4.4.1.1    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.4.1.1.tar.gz
+    4.4.1      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.4.1.tar.gz
+    4.4.0      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.4.0.tar.gz
+    4.3.3.1    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.3.1.tar.gz
+    4.3.3      ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.3.tar.gz
+
+Variants:
+    Name [Default]           Allowed values    Description
+    =====================    ==============    ===============================
+
+    dap [off]                on, off           Enable DAP support
+    hdf4 [off]               on, off           Enable HDF4 support
+    jna [off]                on, off           Enable JNA support
+    mpi [on]                 on, off           Enable parallel I/O for
+                                               netcdf-4
+    parallel-netcdf [off]    on, off           Enable parallel I/O for classic
+                                               files
+    pic [on]                 on, off           Produce position-independent
+                                               code (for shared libs)
+    shared [on]              on, off           Enable shared library
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf  curl  hdf5     m4   parallel-netcdf
+    automake  hdf   libtool  mpi  zlib
+
+Link Dependencies:
+    curl  hdf  hdf5  mpi  parallel-netcdf  zlib
+
+Run Dependencies:
+    None
+
+Virtual Packages:
+    None
+</code></pre>
+<p>这里给出了netcdf-c软件的简要介绍，支持的版本，支持的安装选项，安装步骤，软件安装的依赖和链接的依赖。这里需要重点关注的是两个，一是软件的版本，这个根据用户需求确定；二是Variants，即安装的选项。例如是否支持mpi，是否支持并行I/O等等。 </p>
+<h4 id="spec">准备工作三：查看软件 spec</h4>
+<pre><code class="language-shell">(base) demo@ubuntu:~/github/spack$ spack spec -Il netcdf-c %gcc@8.3.0 arch=linux-rhel7-haswell
+Input spec
+--------------------------------
+ -   netcdf-c%gcc@8.3.0 arch=linux-rhel7-haswell
+
+Concretized
+--------------------------------
+ -   fisfeqj  netcdf-c@4.7.3%gcc@8.3.0 cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot; ~dap~hdf4~jna+mpi~parallel-netcdf+pic+shared arch=linux-rhel7-haswell
+ -   p6z4wf2      ^hdf5@1.10.6%gcc@8.3.0 cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot; ~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-rhel7-haswell
+[+]  45jo6ul          ^mpich@3.2%gcc@8.3.0 cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot; +hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp pmi=pmi arch=linux-rhel7-haswell
+[+]  bpwxbl3          ^zlib@1.2.11%gcc@8.3.0 cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot; +optimize+pic+shared arch=linux-rhel7-haswell
+[+]  rahvynl      ^m4@1.4.18%gcc@8.3.0 cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot; +sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-rhel7-haswell
+[+]  zcmcitr          ^libsigsegv@2.12%gcc@8.3.0 cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;  arch=linux-rhel7-haswell
+</code></pre>
+<p>这里的-I选项显示目标软件和依赖软件的安装状态，- 表示未安装，[+]表示已经安装；-l选项给出依赖的hash值以及版本信息；%gcc@8.3.0 指定使用gcc 8.3.0编译器编译安装，arch=linux-rhel7-haswell 指明系统的架构是haswell，操作系统是linux，发行版是rhel7。</p>
+<p>查看spec 的目的是确认该版本的软件能否安装，以来是否满足，以及依赖软件的安装状态。</p>
+<h4 id="_5">最终的工作：软件安装</h4>
+<pre><code class="language-shell"> (base) demo@ubuntu:~/github/spack$ spack install netcdf-c %gcc@8.3.0 arch=linux-rhel7-haswell
+==&gt; mpich@3.2 : externally installed in /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/mpich-3.2-24zn2tm
+[+] /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/mpich-3.2-24zn2tm
+[+] /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/zlib-1.2.11-bpwxbl3
+[+] /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/libsigsegv-2.12-zcmcitr
+==&gt; Installing hdf5
+==&gt; No binary for hdf5 found: installing from source
+==&gt; hdf5: Executing phase: 'autoreconf'
+==&gt; hdf5: Executing phase: 'configure'
+==&gt; hdf5: Executing phase: 'build'
+==&gt; hdf5: Executing phase: 'install'
+[+] /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/hdf5-1.10.6-p6z4wf2
+[+] /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/m4-1.4.18-rahvynl
+==&gt; Installing netcdf-c
+==&gt; No binary for netcdf-c found: installing from source
+==&gt; netcdf-c: Executing phase: 'autoreconf'
+==&gt; netcdf-c: Executing phase: 'configure'
+==&gt; netcdf-c: Executing phase: 'build'
+==&gt; netcdf-c: Executing phase: 'install'
+[+] /THL8/software/opt/linux-rhel7-haswell/gcc-8.3.0/netcdf-c-4.7.3-fisfeqj
+</code></pre>
+<p>这一步只需要将上面命令中的 <code>spec -Il</code>  替换成 <code>install</code> 即可启动软件的安装。之前查询显示已经安装的软件会自动跳过安装。</p>
+<h3 id="_6">软件安装环境配置和选项设置</h3>
+<h4 id="_7">查找和添加编译器</h4>
+<pre><code class="language-shell"> (base) demo@ubuntu:~/github/spack$ spack compilers
+ ==&gt; Available compilers
+-- gcc rhel7-x86_64 ---------------------------------------------
+gcc@4.8.5
+</code></pre>
+<p>初次运行此命令会在~/.spack/ 目录下创建linux 文件夹，并写入compilers.yaml 文件。正如上面所示，在初始系统环境下只能检索到系统自带的编译器，版本一般都比较旧，无法满足应用部署的需求，需要安装较新版本的编译器，如GCC＠８.３.０。</p>
+<pre><code> (base) demo@ubuntu:~/github/spack$ spack spec -Il gcc@8.3.0 arch=linux-rhel7-haswell
+</code></pre>
+<pre><code> (base) demo@ubuntu:~/github/spack$ spack install gcc@8.3.0 arch=linux-rhel7-haswell
+</code></pre>
+<p>编译器安装后可以通过<code>spack find</code> 检索</p>
+<pre><code> (base) demo@ubuntu:~/github/spack$ spack find -l
+==&gt; 16 installed packages
+-- linux-rhel7-haswell / gcc@4.8.5 ------------------------------
+nbrt3t7 autoconf@2.69    oywfhvk libsigsegv@2.12  yiirsm2 perl@5.30.3
+rqa3ho7 automake@1.16.2  swiq7rt libtool@2.4.6    cexp2vp pkgconf@1.7.3
+263modn gcc@8.3.0        dipchcn m4@1.4.18        a72rtxy readline@8.0
+qrwijay gdbm@1.18.1      upj2gnv mpc@1.1.0        zolwez4 zlib@1.2.11
+raqmdao gmp@6.1.2        vql3fcw mpfr@3.1.6
+zwfd4x6 isl@0.18         cwq7uyp ncurses@6.2
+</code></pre>
+<p>然后加载新安装的GCC，并添加到配置环境中：</p>
+<pre><code>(base) demo@ubuntu:~/github/spack$ spack load gcc@8.3.0
+</code></pre>
+<pre><code>(base) demo@ubuntu:~/github/spack$　spack compiler find
+==&gt; Added 1 new compiler to /THL7/home/maqz2/.spack/linux/compilers.yaml
+    gcc@8.3.0
+==&gt; Compilers are defined in the following files:
+    /THL7/home/maqz2/.spack/linux/compilers.yaml
+</code></pre>
+<p>查看compilers.yaml的内容，可以发现gcc@8.3.0已经添加到其中：</p>
+<pre><code class="language-shell">[maqz2@th-hpc2-ln0 ~]$ cat /THL7/home/maqz2/.spack/linux/compilers.yaml
+compilers:
+- compiler:
+    paths:
+      cc: /usr/bin/gcc
+      cxx: /usr/bin/g++
+      f77: /usr/bin/gfortran
+      fc: /usr/bin/gfortran
+    operating_system: rhel7
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    spec: gcc@4.8.5
+- compiler:
+    paths:
+      cc: /THL6/software/opt/linux-rhel7-haswell/gcc-4.8.5/gcc-8.3.0-263modn/bin/gcc
+      cxx: /THL6/software/opt/linux-rhel7-haswell/gcc-4.8.5/gcc-8.3.0-263modn/bin/g++
+      f77: /THL6/software/opt/linux-rhel7-haswell/gcc-4.8.5/gcc-8.3.0-263modn/bin/gfortran
+      fc: /THL6/software/opt/linux-rhel7-haswell/gcc-4.8.5/gcc-8.3.0-263modn/bin/gfortran
+    operating_system: rhel7
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    spec: gcc@8.3.0
+</code></pre>
+<h3 id="_8">配置方式</h3>
+<p>spack 支持命令行参数和配置文件两种配置方式</p>
+<p>检查配置参数是否正确</p>
+<pre><code class="language-shell"> (base) demo@ubuntu:~/github/spack$ spack config blame config
+---                                                                 config:
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:105    checksum: True
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:69              build_jobs: 16
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:86     verify_ssl: True
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:110    dirty: False
+_builtin                                                              debug: False
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:57              build_stage:
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:58              - ~/.spack/stage
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:59              - /THL6/software/opt/tmp
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:60              - /THL6/home/$user/tmp
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:63     - $tempdir/$user/spack-stage
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:63     # - $spack/var/spack/stage
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:63
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:63
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:81     # Cache directory for already downloaded source tarballs and archived
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:19              # repositories. This can be purged with `spack clean --downloads`.
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:23     connect_timeout: 10
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:23     install_tree: /THL6/software/opt/
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:24     template_dirs:
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:23              - $spack/share/spack/templates
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:27
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:28
+/THL6/software/opt/spack-0.15.4/etc/spack/config.yaml:29              # Default directory layout
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:70     install_path_scheme: ${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}-${HASH:7}
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:75     module_roots:
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:94       tcl: /THL6/software/opt/share/spack/modules
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:100      lmod: /THL6/software/opt/share/spack/lmod
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:118    source_cache: $spack/var/spack/cache
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:127    misc_cache: ~/.spack/cache
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:139    suppress_gpg_warnings: False
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:146    install_missing_compilers: False
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:154    build_language: C
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:159    locks: True
+/THL6/software/opt/spack-0.15.4/etc/spack/defaults/config.yaml:163    ccache: False
+</code></pre>
+<h3 id="_9">问题排查及处理（待完成）</h3>
+<h4 id="_10">报错信息</h4>
+<h4 id="spack-build-outtxt">查看日志 spack-build-out.txt</h4>
+<h4 id="_11">安装调试</h4>
+<p>We can also enter the build area and try to manually run the build:</p>
+<p>$ spack build-env mpileaks bash</p>
+<p>$ spack cd mpileaks</p>
+<p>The spack build-env command spawned a new shell that contains the same environment that Spack used to build the mpileaks package (you can substitute bash for your favorite shell). The spack cd command changed our working dirctory to the last attempted build for mpileaks. From here we can manually re-run the build:</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../manual/ft2000%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C-%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8A%A0%E8%BD%BD%E9%83%A8%E5%88%86/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ft2000系统用户手册" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ft2000系统用户手册
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ft2000%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AECESM%E7%94%A8%E6%88%B7%E7%8E%AF%E5%A2%83/" class="md-footer__link md-footer__link--next" aria-label="Next: ft2000系统配置CESM用户环境" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ft2000系统配置CESM用户环境
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>ft2000系统用户手册 - V2HPC Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#environment-modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="V2HPC Wiki" class="md-header__button md-logo" aria-label="V2HPC Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            V2HPC Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ft2000系统用户手册
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        用户手册
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../environment/spack-tutorial/" class="md-tabs__link">
+        应用部署
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools/vimdiff-remote/" class="md-tabs__link">
+        软件使用
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../share/websites/" class="md-tabs__link">
+      网站分享
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      关于
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="V2HPC Wiki" class="md-nav__button md-logo" aria-label="V2HPC Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    V2HPC Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        用户手册
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="用户手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          用户手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ft2000系统用户手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ft2000系统用户手册
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#environment-modules" class="md-nav__link">
+    Environment modules 工具简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spack-hpc" class="md-nav__link">
+    spack HPC应用部署管理工具简介
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        应用部署
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="应用部署" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          应用部署
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/spack-tutorial/" class="md-nav__link">
+        Spack HPC应用环境部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/ft2000%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AECESM%E7%94%A8%E6%88%B7%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        ft2000系统配置CESM用户环境
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        软件使用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="软件使用" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          软件使用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vimdiff-remote/" class="md-nav__link">
+        vimdiff比较编辑远程文件
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../share/websites/" class="md-nav__link">
+        网站分享
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>ft2000系统用户手册</h1>
+                
+                <p>为了方便用户快速配置工作环境，FT2000+系统上预装了大量的软件，常用应用软件还根据用户的需求安装了不同的版本。用户可以根据自身需求选择加载不同的软件，来构建适合自己的编译环境和程序运行环境。目前FT2000+系统上的应用部署方式有（1）通过Environment modules 工具管理的手动部署和（2）通过spack部署两种方式，加载方式略有区别，这里分别介绍。</p>
+<h3 id="environment-modules">Environment modules 工具简介</h3>
+<p>FT2000+系统采用<code>Environment modules</code>工具用来快速设置和修改用户编译运行环境。 用户可以通过使用<code>Environment modules</code>工具加载和卸载 <code>modulefile</code>（环境配置文件） 来改变账户下的环境变量， 而无需频繁手动修改.bashrc文件， 从而避免误操作。</p>
+<p>下面简述常用的module使用方式：
+（1）使用<code>module avail</code>命令查看系统已安装的所有软件，确认所需的软件是否已经部署，或者使用<code>module avail 软件名称</code>直接查询所需软件。示例如下：</p>
+<pre><code>spack@ln1:~$ module avail
+--------------------------------------- /thfs1/software/modulefiles/Applications --------------------------------------
+cp2k/5.1.0-gcc8.3.0-mpi-x-plumed      gromacs/2016.6-dp-gcc9.3.0-mpi-x  lammps/29Oct20-gcc8.3.0-mpi-x
+espresso/6.3-gcc9.3.0-mpi-x-gcc9.3.0  gromacs/2016.6-sp-gcc9.3.0-mpi-x  namd/2021.6.8-gcc8.3.0-mpi-x
+espresso/6.5-gcc9.3.0-mpi-x-gcc9.3.0  gromacs/2018.8-dp-gcc9.3.0-mpi-x  openfoam/6.0-gcc8.3.0-mpi-x
+espresso/6.6-gcc9.3.0-mpi-x-gcc9.3.0  gromacs/2018.8-sp-gcc9.3.0-mpi-x  plumed/2.7.1-gcc8.3.0-mpi-x
+espresso/6.7Max-gcc8.3.0-mpi-x        gromacs/2019.6-dp-gcc9.3.0-mpi-x  siesta/4.0.2-gcc8.3.0-mpi-x
+gatk/4.2.0.0                          gromacs/2019.6-sp-gcc9.3.0-mpi-x  wps/4.3-emreal-dmpar-gcc8.3.0-mpi-x
+gromacs/4.6.7-dp-gcc9.3.0-mpi-x       gromacs/2020.2-dp-gcc9.3.0-mpi-x  wps/4.3-emreal-dmpar-gcc9.3.0-mpi-x
+gromacs/4.6.7-sp-gcc9.3.0-mpi-x       gromacs/2020.2-sp-gcc9.3.0-mpi-x  wrf/4.3-emreal-dmpar-gcc8.3.0-mpi-x
+gromacs/5.0.7-dp-gcc9.3.0-mpi-x       gromacs/2020.6-dp-gcc9.3.0-mpi-x  wrf/4.3-emreal-dmpar-gcc9.3.0-mpi-x
+gromacs/5.0.7-sp-gcc9.3.0-mpi-x       gromacs/2020.6-sp-gcc9.3.0-mpi-x  wrf/chem-4.3-emreal-dmpar-gcc8.3.0-mpi-x
+gromacs/5.1.5-dp-gcc9.3.0-mpi-x       gromacs/2021.2-dp-gcc9.3.0-mpi-x  wrf/chem-4.3-emreal-dmpar-gcc9.3.0-mpi-x
+gromacs/5.1.5-sp-gcc9.3.0-mpi-x       gromacs/2021.2-sp-gcc9.3.0-mpi-x
+
+--------------------------------------- /thfs1/software/modulefiles/Compilers -----------------------------------------
+GCC/8.3.0           GCC/10.2.0            mpich/mpi-n-gcc9.3.0      mpich/mpi-x-dbg-gcc9.3.0  mpich/mpi-x-gcc9.3.0(default)
+GCC/9.3.0(default)  mpich/mpi-n-gcc8.3.0  mpich/mpi-x-dbg-gcc8.3.0  mpich/mpi-x-gcc8.3.0
+
+--------------------------------------- /thfs1/software/modulefiles/Graphics -----------------------------------------
+jasper/2.0.14-gcc8.3.0  libjpeg-turbo/2.1.0-gcc8.3.0  libpng/1.6.37-gcc8.3.0
+jasper/2.0.14-gcc9.3.0  libjpeg-turbo/2.1.0-gcc9.3.0  libpng/1.6.37-gcc9.3.0
+
+... ...
+</code></pre>
+<p>目前FT2000+主要部署了<code>Applications</code>、<code>Compilers</code>、<code>Graphics</code>、<code>IO_tools</code>、<code>Libraries</code>、<code>Profiling_tools</code>、<code>Tools</code>七大类应用/软件，以及一个<code>Proxy</code>代理工具，包括了科学计算应用、编译环境、图形化工具、IO工具、数学库、性能分析工具、其他工具这些科学计算常用的各种软件。</p>
+<p>（2）使用<code>module load</code>或<code>module unload</code>命令加载或卸载所需软件，以及用<code>module list</code>查看账户下已经加载的软件列表</p>
+<pre><code>spack@ln1:~$ module list
+No Modulefiles Currently Loaded.
+spack@ln1:~$ module load GCC/9.3.0
+spack@ln1:~$ module load mpich/mpi-x-gcc9.3.0
+spack@ln1:~$ module list
+Currently Loaded Modulefiles:
+ 1) GCC/9.3.0(default)   2) mpich/mpi-x-gcc9.3.0(default)
+spack@ln1:~$ module unload mpich/mpi-x-gcc9.3.0
+spack@ln1:~$ module unload GCC/9.3.0
+spack@ln1:~$ module list
+No Modulefiles Currently Loaded.
+
+</code></pre>
+<p>（3）使用<code>module help</code>和<code>module show</code>命令查看软件相关信息，<code>module help</code>主要查询相应软件说明信息，而<code>module show</code>主要展示软件加载时影响的环境变量信息，该命令一般用于用户查询所加载的库的安装路径、头文件路径和库文件路径。</p>
+<pre><code>spack@ln1:~$ module help mpich/mpi-x-gcc9.3.0
+-------------------------------------------------------------------
+Module Specific Help for /thfs1/software/modulefiles/Compilers/mpich/mpi-x-gcc9.3.0:
+
+        modules - loads the modules software &amp; application environment
+
+        This adds /thfs1/software/mpich/mpi-x-gcc9.3.0/* to several of the
+        environment variables.
+
+        Version mpi-x-gcc9.3.0
+
+-------------------------------------------------------------------
+
+spack@ln1:~$ module show mpich/mpi-x-gcc9.3.0
+-------------------------------------------------------------------
+/thfs1/software/modulefiles/Compilers/mpich/mpi-x-gcc9.3.0:
+
+module-whatis   {loads mpich/mpi-x-gcc9.3.0}
+conflict        mpich
+prepend-path    PATH /thfs1/software/mpich/mpi-x-gcc9.3.0/bin
+prepend-path    CPATH /thfs1/software/mpich/mpi-x-gcc9.3.0/include
+prepend-path    C_INCLUDE_PATH /thfs1/software/mpich/mpi-x-gcc9.3.0/include
+prepend-path    CXX_INCLUDE_PATH /thfs1/software/mpich/mpi-x-gcc9.3.0/include
+prepend-path    LIBRARY_PATH /thfs1/software/mpich/mpi-x-gcc9.3.0/lib
+prepend-path    LD_LIBRARY_PATH /thfs1/software/mpich/mpi-x-gcc9.3.0/lib
+prepend-path    PKG_CONFIG_PATH /thfs1/software/mpich/mpi-x-gcc9.3.0/lib/pkgconfig
+setenv          UCX_TLS sm,glex
+-------------------------------------------------------------------
+</code></pre>
+<p>（4）使用<code>module switch</code>或者<code>module swap</code>命令替换环境中加载的某个软件应用。</p>
+<pre><code>spack@ln1:~$ module load GCC/9.3.0
+spack@ln1:~$ module load mpich/mpi-x-gcc9.3.0
+spack@ln1:~$ module list
+Currently Loaded Modulefiles:
+ 1) GCC/9.3.0(default)   2) mpich/mpi-x-gcc9.3.0(default)
+------------------------------------------------------------------- 
+spack@ln1:~$ module switch mpich/mpi-x-dbg-gcc9.3.0
+-------------------------------------------------------------------
+spack@ln1:~$ module list
+Currently Loaded Modulefiles:
+ 1) GCC/9.3.0(default)   2) mpich/mpi-x-dbg-gcc9.3.0
+
+
+</code></pre>
+<p>Module 常用命令表</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">module avail [modulefile]</td>
+<td>查看系统中所有可用的软件，如给定modulefile参数，则查询该软件信息。</td>
+</tr>
+<tr>
+<td align="center">module help [modulefile]</td>
+<td>显示每个子命令的用法，如给定modulefile参数，则显示modulefile中的帮助信息。</td>
+</tr>
+<tr>
+<td align="center">module add |load modulefile</td>
+<td>加载modulefile中设定的环境</td>
+</tr>
+<tr>
+<td align="center">module rm|unload modulefile</td>
+<td>卸载已加载的环境modulefile</td>
+</tr>
+<tr>
+<td align="center">module list</td>
+<td>显示用户已加载的环境变量</td>
+</tr>
+<tr>
+<td align="center">module show modulefile</td>
+<td>显示modulefile环境变量信息</td>
+</tr>
+<tr>
+<td align="center">module swap|switch modulefile1 modulefile2</td>
+<td>用modulefile2替换当前已加载的modulefile1</td>
+</tr>
+<tr>
+<td align="center">module purge</td>
+<td>卸载所有加载的modulefiles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spack-hpc">spack HPC应用部署管理工具简介</h3>
+<p>为了提升应用部署效率和部署质量，提升用户使用体验，我们尝试在FT2000+系统引入spack HPC应用部署管理工具来部署应用环境。
+用户账户下使用spack需要先加载spack环境，方式为将以下内容添加到<code>~/.bashrc</code>或<code>~/.bash_aliases</code>文件中，然后执行<code>source ~/.bashrc</code>重新加载环境。</p>
+<pre><code># Spack package management
+if [ -d &quot;/thfs1/software/spack/spack&quot; ]; then
+    export SPACK_ROOT=/thfs1/software/spack/spack
+    export PATH=$SPACK_ROOT/bin:$PATH
+    #source /thfs1/software/spack/spack/share/spack/setup-env.sh
+    export MODULEPATH=/thfs1/software/spack/share/spack/modules/linux-ubuntu20.04-aarch64:$MODULEPATH
+fi
+</code></pre>
+<p>下面简述常用的spack使用方式：
+(1) 使用<code>spack find</code>命令查看系统已安装软件</p>
+<pre><code>&gt; spack find -l [software spec]
+
+选项说明：
+  -p, --paths       显示软件安装路径
+  -d, --deps        显示软件完整的依赖关系图（有向无环图)
+  -l, --long        显示软件spec的hash值和版本号
+  -f, --show-flags  显示软件安装时的编译器选项
+  -x, --explicit    显示直接安装的软件
+  -X, --implicit    显示作为依赖安装的软件
+  -v, --variants    显示软件的安装选项
+  software spec     指定软件名称及配置选项，查看软件详细信息（hash值，版本，依赖，安装选项，编译选项）
+</code></pre>
+<p>注：<code>spack find</code>命令功能上类似<code>module avail</code>，但不支持模糊查询。比如用spack 的部署的netcdf软件分为<code>netcdf-c</code>和<code>netcdf-fortran</code>，如果<code>spack find</code>命令中仅给出<code>netcdf</code>是无法检索到的。</p>
+<p>（2）加载spack部署的应用
+目前FT2000+系统上利用spack部署的应用，最终都生成了modulefile文件，用户其实可用指定<code>$MODULEPATH</code>后利用<code>module load</code>命令加载相应的模块；但是这样做一来增加了选择软件的繁琐程度，二来容易破坏软件的依赖路径。
+因此建议使用如下方式加载应用（以通用地球系统模式CESM的依赖为例），将以下内容加入<code>~/.bashrc</code>即可完成环境加载：</p>
+<pre><code>source &lt;(spack module tcl loads --dependencies /kkrtpmv) # gcc@9.3.0
+source &lt;(spack module tcl loads --dependencies /e4lfm5m) # cmake@3.18.4
+source &lt;(spack module tcl loads --dependencies /xw6ltva) # esmf@7.1.0r
+</code></pre>
+<p>上述命令中通过添加<code>--dependencies</code> 可以实现同时加载<code>esmf</code>的依赖(同时包含了编译CESM所需的NETCDF，HDF5，MPICH等依赖)</p>
+<pre><code>xw6ltva esmf@7.1.0r%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+5olvqhx     libxml2@2.9.10%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+wqdybbr         libiconv@1.16%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+jfyvejj         xz@5.2.5%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+45oz4lo         zlib@1.2.11%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+wstzt3c     mpich@3.4.2%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+qescd7l     netcdf-c@4.7.4%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+iewu4ps         hdf5@1.10.7%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+phclqla             libszip@2.1.1%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+cpi6jdd             numactl@2.0.14%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+vxoao5f         parallel-netcdf@1.12.1%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+e2epafa     netcdf-fortran@4.5.3%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+uhgldx3     openblas@0.3.12%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+tolmlph     xerces-c@3.2.3%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+kqjyzen         curl@7.72.0%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+uzilztm             libidn2@2.3.0%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+3rk53br                 libunistring@0.9.10%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+kihy5an             openssl@1.1.1h%gcc  cflags=&quot;-O2 -fPIC&quot; cxxflags=&quot;-O2 -fPIC&quot; fflags=&quot;-O2 -fPIC&quot;
+
+</code></pre>
+<p>然后执行<code>source ~/.bashrc</code> 实现对环境的加载。</p>
+<pre><code>spack@ln1:~$ module list
+Currently Loaded Modulefiles:
+ 1) gmp-6.1.2-gcc-8.3.0-lx3wp4x       10) cmake-3.18.4-gcc-9.3.0-e4lfm5m            19) netcdf-c-4.7.4-gcc-9.3.0-qescd7l
+ 2) isl-0.20-gcc-8.3.0-gqkr5oa        11) libiconv-1.16-gcc-9.3.0-wqdybbr           20) netcdf-fortran-4.5.3-gcc-9.3.0-e2epafa
+ 3) mpfr-3.1.6-gcc-8.3.0-yip63bk      12) xz-5.2.5-gcc-9.3.0-jfyvejj                21) openblas-0.3.12-gcc-9.3.0-uhgldx3
+ 4) mpc-1.1.0-gcc-8.3.0-ylgcxws       13) libxml2-2.9.10-gcc-9.3.0-5olvqhx          22) libunistring-0.9.10-gcc-9.3.0-3rk53br
+ 5) zlib-1.2.11-gcc-8.3.0-ienx4xx     14) mpich-3.4.2-gcc-8.3.0-wstzt3c             23) libidn2-2.3.0-gcc-9.3.0-uzilztm
+ 6) gcc-9.3.0-gcc-8.3.0-kkrtpmv       15) libszip-2.1.1-gcc-9.3.0-phclqla           24) curl-7.72.0-gcc-9.3.0-kqjyzen
+ 7) ncurses-6.2-gcc-9.3.0-jnpnv6s     16) numactl-2.0.14-gcc-9.3.0-cpi6jdd          25) xerces-c-3.2.3-gcc-9.3.0-tolmlph
+ 8) zlib-1.2.11-gcc-9.3.0-45oz4lo     17) hdf5-1.10.7-gcc-9.3.0-iewu4ps             26) esmf-7.1.0r-gcc-9.3.0-xw6ltva
+ 9) openssl-1.1.1h-gcc-9.3.0-kihy5an  18) parallel-netcdf-1.12.1-gcc-9.3.0-vxoao5f
+</code></pre>
+<p>注：以CESM为代表的一些应用在编译时所用的环境与加载的依赖所用的编译环境保持一致，而spack的这种加载方式很好地满足了这种要求。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: 首页" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              首页
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../environment/spack-tutorial/" class="md-footer__link md-footer__link--next" aria-label="Next: Spack HPC应用环境部署" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Spack HPC应用环境部署
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>
